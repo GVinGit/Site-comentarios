@@ -1,0 +1,94 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+
+    <!-- Link para o arquivo CSS externo que vai estilizar a página -->
+    <link rel="stylesheet" href="login.css">
+
+    <!-- Ícones do Font Awesome para usar ícones na página -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Links para usar fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant&family=Staatliches&display=swap" rel="stylesheet">
+
+    <!-- Estilo interno para definir a imagem de fundo da página -->
+    <style>
+      body {
+        background-image: url('ceu-azul.webp'); /* Imagem de fundo */
+        background-size: cover; /* A imagem cobre toda a tela */
+        background-position: center; /* Centraliza a imagem */
+        background-repeat: no-repeat; /* Não repete a imagem */
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <!-- Cabeçalho da página com título e subtítulo -->
+      <header>
+        <div class="rain">
+          <!-- Elementos para criar a animação de chuva com CSS -->
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+        </div>
+        <h1>Mudanças Climáticas</h1> <!-- Título principal -->
+        <h3>Um problema que afeta o presente e o futuro</h3> <!-- Subtítulo -->
+      </header>
+
+      <!-- Div para o título da seção de login -->
+      <div class="login">
+        <h1>Login</h1>
+      </div>
+
+      <!-- Formulário de login onde o usuário digita seus dados -->
+      <form id="form">
+        <div class="input-wrapper">
+          <i class="fas fa-user"></i> <!-- Ícone de usuário -->
+          <input type="text" id="nome" placeholder="Digite o nome do usuário" required />
+          <!-- Campo para o usuário digitar o nome, obrigatório -->
+        </div>
+        <br>
+        <div class="input-wrapper">
+          <i class="fas fa fa-envelope"></i> <!-- Ícone de email -->
+          <input type="email" id="email" placeholder="Digite seu email" required />
+          <!-- Campo para digitar o email, obrigatório e com validação -->
+        </div>
+        <br>
+        <div class="input-wrapper">
+          <i class="fas fa-lock"></i> <!-- Ícone de cadeado para senha -->
+          <input type="password" id="senha" placeholder="Digite sua senha" required />
+          <!-- Campo para digitar a senha, obrigatório -->
+        </div>
+
+        <!-- Link para quem não tem conta ainda, direcionando para a página de cadastro -->
+        <h5>Não tem uma conta? <a href="cadastro.html" target="_blank">entre aqui</a></h5>
+        <br><br><br>
+
+        <!-- Botão para enviar o formulário (nesse caso é um botão comum para não recarregar a página) -->
+        <button type="button" onclick="redirecionar()">ENVIAR</button>
+
+        <!-- Script JavaScript simples para redirecionar o usuário quando clicar no botão -->
+        <script>
+          function redirecionar() {
+            // Quando clicar, muda para a página "telainicio.html"
+            window.location.href = "telainicio.html";
+          }
+        </script>
+      </form>
+
+    </center>
+  </body>
+  </html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Define a codificação dos caracteres para suportar português -->
+  <meta charset="UTF-8" />
+  <!-- Responsivo para dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Link para o arquivo CSS externo que contém o estilo da página -->
+  <link rel="stylesheet" href="cadastro.css"/>
+  <!-- Link para ícones da biblioteca Font Awesome (ícones de usuário, email, cadeado) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Pré-conexões para carregar fontes do Google Fonts mais rápido -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <!-- Fonte usada no projeto (familias Cormorant e Staatliches) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant&family=Staatliches&display=swap" rel="stylesheet">
+
+  <!-- Título da aba do navegador -->
+  <title>Cadastro</title>
+</head>
+<body>
+
+  <!-- Centraliza o conteúdo na página -->
+  <center>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Div que cria a animação de chuva com gotas brancas -->
+        <div class="rain">
+          <!-- Cada div "raindrop" representa uma gota de chuva -->
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+          <div class="raindrop"></div>
+        </div>
+
+        <!-- Título principal da página -->
+        <h1>Mudanças Climáticas</h1>
+        <!-- Subtítulo explicativo -->
+        <h3>Um problema que afeta o presente e o futuro</h3>
+    </header>
+
+    <!-- Div para título da área de cadastro -->
+    <div class="Cadastro">
+      <h1>Cadastro</h1>
+    </div>
+
+    <!-- Formulário para o usuário se cadastrar -->
+    <form id="form">
+      
+      <!-- Campo para digitar o nome do usuário com ícone -->
+      <div class="input-user">
+           <i class="fas fa-user"></i> <!-- Ícone de usuário -->
+           <input 
+              type="text" 
+              id="user" 
+              name="user" 
+              placeholder="digite o seu nome" 
+              required
+           />
+      </div>   
+
+      <!-- Campo para digitar o sobrenome -->
+      <div class="sobrenome">
+        <input 
+          type="text" 
+          id="sobrenome" 
+          name="sobrenome" 
+          placeholder="digite o seu sobrenome"
+        />
+      </div>
+
+      <!-- Campo para digitar o email com ícone -->
+      <div class="input-email">
+        <i class="fas fa-envelope"></i> <!-- Ícone de envelope -->
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="digite seu email" 
+          required
+        />
+      </div>
+
+      <!-- Campo para digitar a senha com ícone -->
+      <div class="input-senha">
+        <i class="fas fa-lock"></i> <!-- Ícone de cadeado -->
+        <input 
+          type="password" 
+          id="senha" 
+          name="senha" 
+          placeholder="digite sua senha" 
+          required
+        />
+      </div>
+
+      <!-- Campo para confirmar a senha -->
+      <div class="input-senha2">
+        <input 
+          type="password" 
+          id="confirmar-senha" 
+          name="confirmarsenha" 
+          placeholder="confirme sua senha" 
+          required
+        />
+      </div>
+
+      <!-- Link para quem já tem conta fazer login -->
+      <h5>já tem uma conta? <a href="login.html" target="_blank">fazer login</a></h5>
+      
+      <br>
+
+      <!-- Botão para enviar o formulário -->
+      <button type="submit">enviar</button>
+
+      <br><br>
+      
+      <!-- Informação extra sobre clima (será preenchida via JavaScript) -->
+      <h2>Informação:</h2>
+      <ul id="clima" style="list-style-type: none; padding: 0; margin: 0;"></ul>
+
+    </form>
+   
+  </center>
+
+  <!-- Link para o arquivo JavaScript externo que vai controlar o comportamento da página -->
+  <script src="script.js"></script>
+
+</body>
+</html>

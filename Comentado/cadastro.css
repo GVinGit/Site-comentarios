@@ -1,0 +1,329 @@
+/* Define o comportamento padrão para todos os elementos:
+   - remove as margens e espaçamentos internos
+   - faz o box-sizing considerar a borda no tamanho total */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estiliza o cabeçalho (header):
+   - texto branco
+   - espaçamento interno (padding) grande para dar espaço
+   - centraliza o texto
+   - adiciona uma transição suave para mudanças */
+header {
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    transition: 1s;
+}
+
+/* Quando o mouse passa sobre o header:
+   - aumenta levemente o tamanho (zoom)
+   - mantém a transição suave */
+header:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+/* Estiliza o título principal dentro do header */
+header h1 {
+    font-size: 2.8rem; /* tamanho da fonte */
+    font-family: 'Rubik', sans-serif; /* fonte usada */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.401); /* sombra leve no texto */
+}
+
+/* Estiliza o subtítulo dentro do header */
+header h3 {
+    font-weight: 400; /* peso da fonte mais leve */
+    margin-top: 10px; /* distância do título principal */
+}
+
+/* Estilo do botão (inspirado em cssbuttons-io):
+   - espaçamento interno grande para o botão ser confortável
+   - texto em maiúsculas com espaçamento entre letras
+   - cor do texto preta e fundo quase branco
+   - cantos arredondados e sombra para destacar
+   - cursor muda para indicar que é clicável */
+button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000000;
+    background-color: rgb(254, 254, 255);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s ease 0s; /* transição suave para todas propriedades */
+    cursor: pointer;
+    outline: none; /* remove contorno ao focar */
+}
+
+/* Efeito quando o mouse passa sobre o botão:
+   - muda o fundo para azul escuro
+   - aumenta sombra
+   - texto fica branco
+   - botão sobe levemente */
+button:hover {
+    background-color: #1d39b6;
+    box-shadow: 0px 15px 20px #1d39b67e;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+/* Quando o botão é clicado (ativo):
+   - botão volta quase ao estado normal */
+button:active {
+    transform: translateY(-1px);
+}
+
+/* Estilos para os inputs dentro da classe sobrenome:
+   - espaçamento interno confortável
+   - largura para quase ocupar toda a área disponível
+   - margem para afastar da borda esquerda
+   - fundo branco e sombra para destacar */
+.sobrenome input {
+    padding: 15px;
+    width: 88%;
+    margin-left: 30px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+}
+
+/* Estilos para inputs dentro da classe input-user */
+.input-user input {
+    padding: 15px;
+    width: 88%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+}
+
+/* Para alinhar os inputs e seus ícones horizontalmente */
+.input-user {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilos semelhantes para inputs e container de email */
+.input-email {
+    display: flex;
+    align-items: center;
+}
+
+.input-email input {
+    padding: 15px;
+    width: 88%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+}
+
+/* Para campos de senha e seu alinhamento */
+.input-senha {
+    display: flex;
+    align-items: center;
+}
+
+.input-senha input {
+    padding: 15px;
+    width: 88%;
+    margin-top: 5px; /* pequeno espaçamento acima */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+}
+
+/* Segundo campo de senha, com margem esquerda e topo para alinhamento */
+.input-senha2 input {
+    padding: 15px;
+    width: 88%;
+    margin-top: 13px;
+    margin-left: 30px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+}
+
+/* Estiliza o formulário:
+   - sombra para dar profundidade
+   - espaçamento interno grande para deixar tudo confortável
+   - borda arredondada
+   - largura fixa
+   - fundo azul com transparência */
+form {
+    box-shadow: 3px 3px 70px rgb(0, 27, 67);
+    padding: 70px;
+    border-radius: 40px;
+    width: 550px;
+    background-color: rgba(64, 106, 146, 0.438);
+    margin: 15px;
+}
+
+/* Título h1 com fonte especial e tamanho gigante,
+   decorado com sombra e contorno */
+h1 {
+  font-family: Staatliches;
+  font-size: 100px;
+  text-decoration: wavy;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.401);
+  color: rgba(255, 255, 255, 0.958);
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.39);
+}
+
+/* Estilo do corpo da página:
+   - define uma imagem de fundo que cobre toda a tela
+   - usa a fonte Rubik para o texto */
+body {
+    background-image: url(ceu-azul.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Ícones (tag i) brancos e tamanho médio */
+i {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+/* Inputs com cantos arredondados e margem */
+input {
+    border-radius: 23px;
+    margin: 15px;
+    align-items: center;
+    border: none;
+    transition: 0.2s; /* para efeitos suaves */
+}
+
+/* Parágrafos com texto branco, margem à direita e fonte média */
+p {
+  color: rgb(255, 255, 255);
+  margin-right: 200px;
+  font-size: 16px;
+}
+
+/* Links sem sublinhado e com cor azul escura */
+a {
+    text-decoration: none;
+    color: #0a1aad;
+}
+
+/* Container sol: alinha itens no centro, com espaçamento */
+.sol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 50;
+}
+
+/* Imagem dentro do container sol com largura fixa */
+.sol img {
+    width: 145px;
+}
+
+/* Quando o input estiver focado (clicado para digitar):
+   - adiciona borda escura e remove sombra */
+input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.500);
+    outline: none;
+    box-shadow: 1px 5px 45px rgba(255, 255, 255, 0.0);
+    transition: 0.2s;
+}
+
+/* Quando o mouse passar sobre o input:
+   - adiciona sombra branca brilhante
+   - cursor muda para indicar que pode clicar/digitar
+   - aumenta levemente o tamanho */
+input:hover {
+    box-shadow: 1px 5px 45px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+/* Estilos para a animação de chuva (rain):
+   - ocupa toda a tela
+   - está acima dos elementos (z-index)
+   - não bloqueia cliques (pointer-events none) */
+.rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Cada gota de chuva é uma pequena linha branca que cai */
+.raindrop {
+    position: absolute;
+    top: -10px; /* começa um pouco acima da tela */
+    width: 2px;
+    height: 10px;
+    background: white;
+    opacity: 0.6;
+    animation: fall 2s infinite linear; /* animação de queda infinita */
+}
+
+/* Define a animação de queda da gota:
+   - do topo para o final da tela
+   - fica transparente no final */
+@keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+}
+
+/* Define posições horizontais e atrasos diferentes para as gotas,
+   criando um efeito mais natural */
+.raindrop:nth-child(1) { left: 10%; animation-delay: 0s; }
+.raindrop:nth-child(2) { left: 20%; animation-delay: 0.5s; }
+.raindrop:nth-child(3) { left: 30%; animation-delay: 1s; }
+.raindrop:nth-child(4) { left: 40%; animation-delay: 1.5s; }
+.raindrop:nth-child(5) { left: 50%; animation-delay: 2s; }
+.raindrop:nth-child(6) { left: 60%; animation-delay: 2.5s; }
+.raindrop:nth-child(7) { left: 70%; animation-delay: 3s; }
+.raindrop:nth-child(8) { left: 80%; animation-delay: 3.5s; }
+.raindrop:nth-child(9) { left: 90%; animation-delay: 4s; }
+.raindrop:nth-child(10) { left: 95%; animation-delay: 4.5s; }
+
+/* Título h5 com cor branca */
+h5 {
+  color: white;
+}
+
+/* Classe para título grande com estilo parecido com h1 */
+.cadastr0 {
+  font-family: Staatliches;
+  font-size: 100px;
+  text-decoration: wavy;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.401);
+  color: rgba(255, 255, 255, 0.958);
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.39);
+}
+
+/* Título h2 com fonte branca, sombreada e tamanho médio */
+h2 {
+  color: whitesmoke;
+  font-family: Staatliches;
+  font-size: 30px;
+  text-shadow: 0px 0px 2px whitesmoke;
+}
+
+/* Lista com id clima:
+   - remove marcadores e espaçamentos
+   - texto preto */
+#clima {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: black;
+}

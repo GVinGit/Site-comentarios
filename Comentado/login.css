@@ -1,0 +1,189 @@
+/* Zera margens e paddings e define box-sizing para facilitar o controle de tamanho */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do cabeçalho */
+header {
+    color: white; /* texto branco */
+    padding: 40px 20px; /* espaçamento interno */
+    text-align: center; /* texto centralizado */
+    transition: 1s; /* transição suave para transformações */
+}
+
+/* Efeito ao passar o mouse no header: aumenta o tamanho */
+header:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+/* Estilo do título principal no header */
+header h1 {
+    font-size: 2.8rem;
+    font-family: 'Rubik', sans-serif;
+    /* sombra leve para destacar o texto */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.401);
+}
+
+/* Estilo do subtítulo no header */
+header h3 {
+    font-weight: 400; /* fonte normal */
+    margin-top: 10px; /* espaço acima */
+}
+
+/* Estilos do corpo da página */
+body {
+    background-image: url('ceu-azul.webp'); /* imagem de fundo */
+    background-size: cover; /* cobre toda área */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat; /* não repete a imagem */
+    font-family: 'Rubik', sans-serif; /* fonte padrão */
+}
+
+/* Estilo para campos de texto e textarea */
+input, textarea {
+    width: 600px; /* largura fixa */
+    padding: 15px; /* espaço interno */
+    border-radius: 23px; /* cantos arredondados */
+    border: none; /* sem borda visível */
+    /* sombra para dar profundidade */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+}
+
+/* Estilo do formulário */
+form {
+    /* sombra azul escura */
+    box-shadow: 3px 3px 70px rgb(0, 37, 71);
+    margin: 15px; /* espaço externo */
+    padding: 70px; /* espaço interno grande */
+    border-radius: 20px; /* cantos arredondados */
+    width: 450px; /* largura fixa */
+    /* fundo azul semi-transparente */
+    background-color: rgba(64, 106, 146, 0.527);
+}
+
+/* Organização dos inputs com ícones */
+.input-wrapper {
+    padding: 14px 2px;
+    display: flex; /* alinha itens na horizontal */
+    align-items: center; /* centraliza verticalmente */
+    gap: 8px; /* espaço entre ícone e campo */
+}
+
+/* Cor dos ícones */
+.input-wrapper i {
+    color: rgb(255, 255, 255);
+}
+
+/* Estilo dos botões */
+button {
+    padding: 1.3em 3em; /* espaçamento interno */
+    font-size: 12px;
+    text-transform: uppercase; /* texto em maiúsculas */
+    letter-spacing: 2.5px; /* espaço entre letras */
+    font-weight: 500;
+    color: #000000; /* texto preto */
+    background-color: rgb(254, 254, 255); /* fundo quase branco */
+    border: none;
+    border-radius: 45px; /* botões arredondados */
+    /* sombra leve para profundidade */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s ease 0s; /* animação suave */
+    cursor: pointer; /* cursor de mãozinha */
+    outline: none;
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #1d39b6; /* fundo azul escuro */
+    box-shadow: 0px 15px 20px #1d39b67e; /* sombra maior */
+    color: #fff; /* texto branco */
+    transform: translateY(-7px); /* levanta o botão */
+}
+
+/* Efeito ao clicar no botão */
+button:active {
+    transform: translateY(-1px); /* botão desce um pouco */
+}
+
+/* Estilo dos parágrafos */
+p {
+    font-family: cormorant;
+    color: rgb(255, 255, 255); /* texto branco */
+    margin: 10px;
+    position: absolute;
+    font-size: 16px; /* tamanho da fonte corrigido */
+    right: 50%; /* posição da direita */
+}
+
+/* Estilo dos links */
+a {
+    text-decoration: none; /* sem sublinhado */
+    color: #0a1aad; /* azul */
+}
+
+/* Estilo dos títulos h1 grandes */
+h1 {
+    font-family: Staatliches;
+    font-size: 100px;
+    text-decoration: wavy; /* decoração ondulada */
+    transition: all 0.3s ease;
+    /* sombra para destaque */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.401);
+    color: rgba(255, 255, 255, 0.958);
+    /* contorno branco fino */
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.39);
+}
+
+/* Estilo para o container da chuva */
+.rain {
+    position: absolute; /* fica sobreposto */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* não atrapalha cliques */
+    z-index: 1; /* fica acima do fundo */
+}
+
+/* Estilo das gotas de chuva */
+.raindrop {
+    position: absolute;
+    top: -10px; /* começa um pouco acima da tela */
+    width: 2px;
+    height: 10px;
+    background: white;
+    opacity: 0.6;
+    animation: fall 2s infinite linear; /* animação de queda */
+}
+
+/* Animação da queda das gotas */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Define posições horizontais e atrasos das gotas */
+.raindrop:nth-child(1) { left: 10%; animation-delay: 0s; }
+.raindrop:nth-child(2) { left: 20%; animation-delay: 0.5s; }
+.raindrop:nth-child(3) { left: 30%; animation-delay: 1s; }
+.raindrop:nth-child(4) { left: 40%; animation-delay: 1.5s; }
+.raindrop:nth-child(5) { left: 50%; animation-delay: 2s; }
+.raindrop:nth-child(6) { left: 60%; animation-delay: 2.5s; }
+.raindrop:nth-child(7) { left: 70%; animation-delay: 3s; }
+.raindrop:nth-child(8) { left: 80%; animation-delay: 3.5s; }
+.raindrop:nth-child(9) { left: 90%; animation-delay: 4s; }
+.raindrop:nth-child(10) { left: 95%; animation-delay: 4.5s; }
+
+/* Estilo para subtítulo h5 */
+h5 {
+    color: white;
+}
