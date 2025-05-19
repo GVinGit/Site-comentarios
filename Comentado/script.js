@@ -10,8 +10,15 @@ let cadastro = JSON.parse(localStorage.getItem("cadastro")) || [];
 
 // Função para renderizar as informações cadastradas na tela
 function renderInformacoes() {
-  // Limpa a lista antes de re-renderizar
+  // Limpa a lista completamente
   lista.innerHTML = "";
+
+  // Se houver cadastros, adiciona o título
+  if (cadastro.length > 0) {
+    const titulo = document.createElement("li");
+    titulo.innerHTML = '<h2>Informação:</h2>';
+    lista.appendChild(titulo);
+  }
 
   // Percorre todos os itens do array `cadastro` e os exibe
   cadastro.forEach((item, index) => {
