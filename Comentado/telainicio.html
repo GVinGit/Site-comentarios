@@ -1,275 +1,300 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-      <!-- Define a codificação e adaptabilidade para dispositivos móveis -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mudanças Climáticas</title>
-  <!-- Fonte externa do Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mudanças Climáticas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Estilo global do corpo */
-    body {
-    font-family: 'Rubik', sans-serif;
-    background: #e0f7fa;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth; /* Suaviza o scroll */
-    }
+        body {
+            font-family: 'Rubik', sans-serif;
+            background: #e0f7fa;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-    /* Estilização do cabeçalho */
-    header {
-    background: linear-gradient(135deg, #4197dd, #4fc3f7);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: 1s;
-    }
+        /* Menu de navegação */
+        nav {
+            background: #0288d1;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
 
-    /* Efeito de zoom ao passar o mouse */
-    header:hover {
-    transform: scale(1.05);
-    transition: 1s;
-    }
+        .menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    header h1 {
-    font-size: 2.8rem;
-    }
+        .menu li {
+            margin: 0 15px;
+        }
 
-    header h3 {
-    font-weight: 400;
-    margin-top: 10px;
-    }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
 
-    /* Animação de chuva - container */
-    .rain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Não interfere na interação do usuário */
-    z-index: 1;
-    }
+        .menu a:hover {
+            background: rgba(255,255,255,0.2);
+        }
 
-     /* Gotas de chuva individuais */
-    .raindrop {
-    position: absolute;
-    top: -10px;
-    width: 2px;
-    height: 10px;
-    background: white;
-    opacity: 0.6;
-    animation: fall 2s infinite linear;
-    }
+        .menu a.active {
+            background: rgba(255,255,255,0.3);
+            font-weight: bold;
+        }
 
-    /* Animação da queda */
-    @keyframes fall {
-    0% {
-        transform: translateY(0);
-        opacity: 0.6;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-    }
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #4197dd, #4fc3f7);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 1s;
+        }
 
-    /* Define posições e atrasos das gotas */
-    .raindrop:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .raindrop:nth-child(2) { left: 20%; animation-delay: 0.5s; }
-    .raindrop:nth-child(3) { left: 30%; animation-delay: 1s; }
-    .raindrop:nth-child(4) { left: 40%; animation-delay: 1.5s; }
-    .raindrop:nth-child(5) { left: 50%; animation-delay: 2s; }
-    .raindrop:nth-child(6) { left: 60%; animation-delay: 2.5s; }
-    .raindrop:nth-child(7) { left: 70%; animation-delay: 3s; }
-    .raindrop:nth-child(8) { left: 80%; animation-delay: 3.5s; }
-    .raindrop:nth-child(9) { left: 90%; animation-delay: 4s; }
-    .raindrop:nth-child(10) { left: 95%; animation-delay: 4.5s; }
+        header:hover {
+            transform: scale(1.05);
+            transition: 1s;
+        }
 
-    /* Área principal do conteúdo */
-    .content {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: auto;
-    }
+        header h1 {
+            font-size: 2.8rem;
+        }
 
-    .content h1 {
-    font-size: 2.2rem;
-    color: #0288d1;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease;
-    }
+        header h3 {
+            font-weight: 400;
+            margin-top: 10px;
+        }
 
-    .content p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    }
+        /* Animação de chuva */
+        .rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-    /* Botão animado */
-    button {
-    padding: 12px 25px;
-    background: linear-gradient(150deg, #2168a1, #3b9dca);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.3s ease, transform 0.2s ease;
-    margin-top: 20px;
-    box-shadow: #280ca3;
-    transition: 0.5s;
-    }
+        .raindrop {
+            position: absolute;
+            top: -10px;
+            width: 2px;
+            height: 10px;
+            background: white;
+            opacity: 0.6;
+            animation: fall 2s infinite linear;
+        }
 
-    button:hover {
-    background: linear-gradient(150deg, #17598f, #2980a8);
-    transform: scale(1.05);
-    transition: 0.5s;
-    }
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 0.6; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
 
-    /* Bloco que aparece ao clicar no botão */
-    .causa-efeito {
-    display: none;
-    background: #ffffff;
-    border-left: 5px solid #81c784;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    }
+        .raindrop:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .raindrop:nth-child(2) { left: 20%; animation-delay: 0.5s; }
+        .raindrop:nth-child(3) { left: 30%; animation-delay: 1s; }
+        .raindrop:nth-child(4) { left: 40%; animation-delay: 1.5s; }
+        .raindrop:nth-child(5) { left: 50%; animation-delay: 2s; }
+        .raindrop:nth-child(6) { left: 60%; animation-delay: 2.5s; }
+        .raindrop:nth-child(7) { left: 70%; animation-delay: 3s; }
+        .raindrop:nth-child(8) { left: 80%; animation-delay: 3.5s; }
+        .raindrop:nth-child(9) { left: 90%; animation-delay: 4s; }
+        .raindrop:nth-child(10) { left: 95%; animation-delay: 4.5s; }
 
-    /* Ícones ecológicos */
-    .eco-icons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-    }
+        /* Conteúdo principal */
+        .content {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
 
-    .eco-icons div {
-    text-align: center;
-    }
+        .content h1 {
+            font-size: 2.2rem;
+            color: #0288d1;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease;
+        }
 
-    .eco-icons img {
-    width: 80px;
-    margin-bottom: 10px;
-    }
+        .content h2 {
+            font-size: 1.8rem;
+            color: #0288d1;
+            margin: 30px 0 15px;
+            border-bottom: 2px solid #4fc3f7;
+            padding-bottom: 5px;
+        }
 
-    .eco-icons div:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-    }
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
 
-    /* Sol animado com olhos */
-    .sun {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, #ffd55c, #f9a602);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 40px #ffc107;
-    flex-shrink: 0;
-    transition: transform 0.3s;
-    z-index: 2; /* Fica acima da chuva */
-    }
+        .content li {
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
 
-    .sun:hover {
-    transform: scale(1.1) rotate(10deg);
-    }
+        /* Cards de informação */
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
 
-    .eyes {
-    display: flex;
-    gap: 8px;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-    .eye {
-    width: 18px;
-    height: 18px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    }
+        .card h3 {
+            color: #0288d1;
+            margin-bottom: 10px;
+        }
 
-    .pupil {
-    width: 6px;
-    height: 6px;
-    background: black;
-    border-radius: 50%;
-    }
+        /* Rodapé */
+        footer {
+            background: #263238;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
 
-    /* Rodapé */
-    footer {
-    background: #263238;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    }
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    /* Animação de entrada */
-    @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-    }
+        /* Responsivo */
+        @media (max-width: 600px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .menu li {
+                margin: 5px 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .content h1 {
+                font-size: 1.8rem;
+            }
+        }
 
-    /* Layout responsivo */
-    @media (max-width: 600px) {
-    .eco-icons {
-        flex-direction: column;
-        gap: 20px;
-    }
-    }
+        /* Esconde todas as seções por padrão */
+        .page-section {
+            display: none;
+        }
+        
+        /* Mostra apenas a seção ativa */
+        .page-section.active {
+            display: block;
+        }
 
-    /* Estilos específicos para seções */
-    .h3efeito{
-        animation: fadeIn 1s ease forwards;
-        color: #0288d1;
-    }
+        /* SOL ANIMADO - Adicionado do ComSol */
+        .sun {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #ffd55c, #f9a602);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 40px #ffc107;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            z-index: 2;
+        }
 
-    #sabia {
-    color: #0288d1;
-    font-size: 20px;
-}
+        .sun:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
 
-#Impactos {
-    font-size: 20px;
-    color: #0288d1;
-}
+        .eyes {
+            display: flex;
+            gap: 8px;
+        }
 
-#Brasil{
-    font-size: 20px;
-    color: #0288d1;
-}
+        .eye {
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-</style>
+        .pupil {
+            width: 6px;
+            height: 6px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        /* Container do título com sol */
+        .title-with-sun {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
 </head>
-<body>
+<body>  
+
+<!-- Menu de navegação -->
+<nav>
+    <ul class="menu">
+        <li><a href="#" class="menu-link active" data-section="inicio">Início</a></li>
+        <li><a href="#" class="menu-link" data-section="causas">Causas e Efeitos</a></li>
+        <li><a href="#" class="menu-link" data-section="impactos">Impactos no Brasil</a></li>
+        <li><a href="#" class="menu-link" data-section="solucoes">Soluções</a></li>
+        <li><a href="#" class="menu-link" data-section="curiosidades">Curiosidades</a></li>
+    </ul>
+</nav>
 
 <!-- Cabeçalho com animação de chuva -->
 <header>
     <div class="rain">
-    <!-- Gotas de chuva (vistas no CSS com animação) -->
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
-    <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
     </div>
     <h1>Mudanças Climáticas</h1>
     <h3>Um problema que afeta o presente e o futuro</h3>
@@ -277,126 +302,298 @@
 
 <!-- Conteúdo principal -->
 <div class="content">
-    <div style="display: flex; align-items: center; gap: 10px;">
-    <!-- Sol com olhos animados -->
-    <div class="sun">
-        <div class="eyes">
-        <div class="eye" id="leftEye"><div class="pupil" id="pupil1"></div></div>
-        <div class="eye" id="rightEye"><div class="pupil" id="pupil2"></div></div>
+    <!-- Página Início -->
+    <section id="inicio" class="page-section active">
+        <div class="title-with-sun">
+            <div class="sun">
+                <div class="eyes">
+                    <div class="eye" id="leftEye"><div class="pupil" id="pupil1"></div></div>
+                    <div class="eye" id="rightEye"><div class="pupil" id="pupil2"></div></div>
+                </div>
+            </div>
+            <h1>O que está acontecendo?</h1>
         </div>
-    </div>
-    <h1>O que está acontecendo?</h1>
-    </div>
 
-    <!-- Texto explicativo -->
-    <p>O clima do nosso planeta está mudando rapidamente. Tempestades extremas, secas prolongadas, derretimento de geleiras e aumento do nível dos mares são apenas alguns dos sintomas de uma crise global.</p>
-    <p>Essas mudanças afetam a agricultura, a biodiversidade, a saúde humana e a economia. E elas são causadas, em grande parte, pelas atividades humanas.</p>
-    
-    <!-- Botão que exibe as causas e efeitos -->
-    <button onclick="showCausaEfeito(); fecharCausaEfeito();">Entenda Causas e Efeitos</button>
-    <div class="causa-efeito" id="causaEfeito">
-    <h2>Causas</h2>
-    
-    <p>- Emissão de gases de efeito estufa (como CO₂ e CH₄)</p>
-    <p>- Desmatamento e uso excessivo de recursos naturais</p>
-    <p>- Queima de combustíveis fósseis</p>
-    <h2>Efeitos</h2>
-    <p>- Aquecimento global e aumento do nível do mar</p>
-    <p>- Extinção de espécies e colapso de ecossistemas</p>
-    <p>- Crises hídricas, alimentares e migratórias</p>
-    <p>-O efeito estufa é um fenômeno natural essencial para manter a Terra aquecida. Porém, com o aumento da emissão de gases como CO₂, CH₄ e N₂O, esse efeito tem se intensificado, provocando o superaquecimento do planeta.</p> 
-    </div>
-    <br>
-    <br>
-    <div id="Impactos">
-    <h2>Impactos no Brasil</h2>
-        <br>
-    </div>
-    <li><b>Temperaturas mais altas</b> e ondas de calor.</li>
-    <li><b>Chuvas irregulares,</b> causando tanto secas fortes quanto inundações.</li>
-    <li><b>Prejuízos para a natureza</b>, com risco para plantas e animais.</li>
-    <li><b>Dificuldades para a agricultura</b> e menos água em algumas áreas.</li>
-    <li> <b>Mais eventos extremos</b> como tempestades e secas intensas.</li>
-    
-<br><br><br>
+        <p>O clima do nosso planeta está mudando rapidamente. Tempestades extremas, secas prolongadas, derretimento de geleiras e aumento do nível dos mares são apenas alguns dos sintomas de uma crise global.</p>
+        <p>Essas mudanças afetam a agricultura, a biodiversidade, a saúde humana e a economia. E elas são causadas, em grande parte, pelas atividades humanas.</p>
+        
+        <div class="card">
+            <h3>Destaque</h3>
+            <p>Nos últimos 100 anos, a temperatura média global aumentou aproximadamente 1°C. Pode parecer pouco, mas esse aumento já está causando transformações significativas em nosso planeta.</p>
+        </div>
+    </section>
 
-<!-- Soluções -->
-<div id="Brasil">
-    <h2>Para combater as mudanças climáticas no Brasil de forma sustentável:</h2>
-    <br>
-</div>
-    <li><b>Usar mais energia limpa</b> (Sol, vento).</li>
-    <li><b>Proteger e recuperar florestas</b> e usar a terra de forma inteligente na agricultura.</li>
-    <li><b>Cuidar bem da água</b>, usando-a sem desperdício.</li>
-    <li><b>Tornar as cidades mais verdes</b> e preparadas para o clima.</li>
-    <li><b>Restaurar a natureza</b> para que ela ajude a equilibrar o clima.</li>
+    <!-- Página Causas e Efeitos -->
+    <section id="causas" class="page-section">
+        <div class="title-with-sun">
+            <div class="sun">
+                <div class="eyes">
+                    <div class="eye" id="leftEye3"><div class="pupil" id="pupil3"></div></div>
+                    <div class="eye" id="rightEye3"><div class="pupil" id="pupil4"></div></div>
+                </div>
+            </div>
+            <h1>Causas e Efeitos das Mudanças Climáticas</h1>
+        </div>
+        
+        <div class="card">
+            <h3>Principais Causas</h3>
+            <ul>
+                <li><strong>Emissão de gases de efeito estufa:</strong> CO₂ (queima de combustíveis fósseis), CH₄ (pecuária e aterros), N₂O (agricultura)</li>
+                <li><strong>Desmatamento:</strong> Redução da capacidade de absorção de CO₂</li>
+                <li><strong>Uso intensivo de recursos:</strong> Consumo excessivo de energia e produtos</li>
+                <li><strong>Industrialização:</strong> Processos industriais poluentes</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Efeitos Observados</h3>
+            <ul>
+                <li><strong>Aumento da temperatura global:</strong> Recordes de temperatura ano após ano</li>
+                <li><strong>Eventos extremos:</strong> Furacões, secas e inundações mais intensos</li>
+                <li><strong>Derretimento de geleiras:</strong> Aumento do nível do mar</li>
+                <li><strong>Mudanças nos ecossistemas:</strong> Espécies migrando ou entrando em extinção</li>
+                <li><strong>Impactos na saúde:</strong> Doenças tropicais se espalhando</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Ciclo Vicioso</h3>
+            <p>Alguns efeitos das mudanças climáticas acabam piorando ainda mais o problema. Por exemplo, o derretimento do permafrost libera metano armazenado, que é um gás de efeito estufa ainda mais potente que o CO₂.</p>
+        </div>
+    </section>
 
-<br><br>
-<!-- Curiosidades -->
-<div id="sabia">
-    <center>
-    <h2>Você sabia?</h2>
-    </center>
-    </div>
-    <br>
-    <p>Você sabia que o setor de alimentos contribui com cerca de um terço das emissões globais de gases de efeito estufa? Além disso, apenas uma centena de empresas são responsáveis por mais de setenta por cento das emissões industriais desde 1988. E se a temperatura do planeta subir mais de 1,5 grau Celsius, os eventos climáticos extremos, como tempestades e secas, podem se tornar cinco vezes mais frequentes.</p>
+    <!-- Página Impactos no Brasil -->
+    <section id="impactos" class="page-section">
+        <div class="title-with-sun">
+            <div class="sun">
+                <div class="eyes">
+                    <div class="eye" id="leftEye5"><div class="pupil" id="pupil5"></div></div>
+                    <div class="eye" id="rightEye5"><div class="pupil" id="pupil6"></div></div>
+                </div>
+            </div>
+            <h1>Impactos das Mudanças Climáticas no Brasil</h1>
+        </div>
+        
+        <div class="card">
+            <h3>Região Amazônica</h3>
+            <ul>
+                <li>Redução das chuvas e aumento da temperatura</li>
+                <li>Risco de savanização da floresta</li>
+                <li>Perda de biodiversidade</li>
+                <li>Impactos nas comunidades indígenas</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Nordeste</h3>
+            <ul>
+                <li>Intensificação das secas</li>
+                <li>Desertificação de áreas semiáridas</li>
+                <li>Redução da produção agrícola</li>
+                <li>Migração climática</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Sudeste e Sul</h3>
+            <ul>
+                <li>Eventos extremos mais frequentes (chuvas torrenciais e secas)</li>
+                <li>Problemas no abastecimento de água (ex.: crise hídrica em SP)</li>
+                <li>Impactos na agricultura (café, cana-de-açúcar, laranja)</li>
+                <li>Aumento de doenças transmitidas por mosquitos</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Zona Costeira</h3>
+            <ul>
+                <li>Aumento do nível do mar ameaça cidades litorâneas</li>
+                <li>Salinização de aquíferos</li>
+                <li>Perda de áreas de manguezais</li>
+                <li>Impactos na pesca e turismo</li>
+            </ul>
+        </div>
+    </section>
 
-    <!-- Ícones ecológicos -->
-    <div class="eco-icons">
-    <div>
-        <img src="https://img.icons8.com/color/96/000000/earth-planet.png" alt="Planeta Terra"/>
-        <p>Preservar o planeta</p>
-    </div>
-    <div>
-        <img src="https://img.icons8.com/color/96/000000/wind-turbine.png" alt="Energia limpa"/>
-        <p>Usar energia limpa</p>
-    </div>
-    <div>
-        <img src="https://img.icons8.com/color/96/000000/forest.png" alt="Plantar árvores"/>
-        <p>Reflorestar</p>
-    </div>
-    </div>
+    <!-- Página Soluções -->
+    <section id="solucoes" class="page-section">
+        <div class="title-with-sun">
+            <div class="sun">
+                <div class="eyes">
+                    <div class="eye" id="leftEye7"><div class="pupil" id="pupil7"></div></div>
+                    <div class="eye" id="rightEye7"><div class="pupil" id="pupil8"></div></div>
+                </div>
+            </div>
+            <h1>Soluções para as Mudanças Climáticas</h1>
+        </div>
+        
+        <div class="card">
+            <h3>Energia Limpa</h3>
+            <ul>
+                <li>Investimento em energia solar, eólica e outras renováveis</li>
+                <li>Eficiência energética em indústrias e residências</li>
+                <li>Transporte sustentável (elétricos, bicicletas, transporte público)</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Conservação Ambiental</h3>
+            <ul>
+                <li>Combate ao desmatamento e queimadas</li>
+                <li>Restauração florestal e recuperação de áreas degradadas</li>
+                <li>Proteção de ecossistemas críticos (Amazônia, Pantanal, Mata Atlântica)</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Agricultura Sustentável</h3>
+            <ul>
+                <li>Sistemas agroflorestais e agricultura regenerativa</li>
+                <li>Redução do uso de fertilizantes químicos</li>
+                <li>Manejo sustentável do solo</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Ações Individuais</h3>
+            <ul>
+                <li>Reduzir consumo de carne (especialmente bovina)</li>
+                <li>Consumo consciente e redução de desperdício</li>
+                <li>Uso eficiente de água e energia</li>
+                <li>Preferência por produtos locais e sustentáveis</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Políticas Públicas</h3>
+            <ul>
+                <li>Cumprimento do Acordo de Paris</li>
+                <li>Incentivos fiscais para práticas sustentáveis</li>
+                <li>Educação ambiental nas escolas</li>
+                <li>Investimento em pesquisa e inovação verde</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Página Curiosidades -->
+    <section id="curiosidades" class="page-section">
+        <div class="title-with-sun">
+            <div class="sun">
+                <div class="eyes">
+                    <div class="eye" id="leftEye9"><div class="pupil" id="pupil9"></div></div>
+                    <div class="eye" id="rightEye9"><div class="pupil" id="pupil10"></div></div>
+                </div>
+            </div>
+            <h1>Curiosidades sobre Mudanças Climáticas</h1>
+        </div>
+        
+        <div class="card">
+            <h3>Você sabia?</h3>
+            <ul>
+                <li>O setor de alimentos contribui com cerca de 26% das emissões globais de gases de efeito estufa</li>
+                <li>Apenas 100 empresas são responsáveis por 71% das emissões industriais desde 1988</li>
+                <li>Se o permafrost do Ártico derreter completamente, pode liberar 1.400 gigatoneladas de CO₂</li>
+                <li>Os oceanos absorvem cerca de 30% do CO₂ emitido, causando sua acidificação</li>
+                <li>O metano (CH₄) tem um potencial de aquecimento global 28 vezes maior que o CO₂ em 100 anos</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Fatos surpreendentes</h3>
+            <ul>
+                <li>Em 2020, durante os lockdowns da COVID-19, as emissões globais caíram 7% - mostrando que mudanças são possíveis</li>
+                <li>Um voo de ida e volta entre Nova York e Londres emite cerca de 1 tonelada de CO₂ por passageiro</li>
+                <li>A pecuária bovina é responsável por cerca de 14,5% das emissões globais de gases de efeito estufa</li>
+                <li>O Brasil é o 6º maior emissor de gases de efeito estufa do mundo, principalmente por causa do desmatamento</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Comparações interessantes</h3>
+            <ul>
+                <li>O nível do mar subiu cerca de 20 cm desde 1900, e o ritmo está acelerando</li>
+                <li>Os últimos 7 anos (2015-2021) foram os mais quentes já registrados</li>
+                <li>Para limitar o aquecimento a 1,5°C, precisamos reduzir as emissões pela metade até 2030</li>
+                <li>As concentrações de CO₂ na atmosfera são as mais altas em pelo menos 2 milhões de anos</li>
+            </ul>
+        </div>
+    </section>
 </div>
 
 <!-- Rodapé -->
 <footer>
-    <p>🌱 Desenvolvido por João Pedro C., Kaue Rosa, Gabriel V., joão V. - Juntos pelo futuro do planeta 🌎</p>
+    <p>🌱 Desenvolvido por João Pedro C., Kaue Rosa, Gabriel V., João V. - Juntos pelo futuro do planeta 🌎</p>
 </footer>
 
-<!-- JavaScript para animações dos olhos e botão -->
 <script>
-    const pupil1 = document.getElementById('pupil1');
-    const pupil2 = document.getElementById('pupil2');
-
-    // Movimento dos olhos seguindo o mouse
+    // Movimento dos olhos seguindo o mouse para todos os sóis
     document.addEventListener('mousemove', (e) => {
-    [pupil1, pupil2].forEach(pupil => {
-        const rect = pupil.getBoundingClientRect();
-        const eyeCenterX = rect.left + rect.width / 2;
-        const eyeCenterY = rect.top + rect.height / 2;
-        const dx = e.clientX - eyeCenterX;
-        const dy = e.clientY - eyeCenterY;
-        const angle = Math.atan2(dy, dx);
-        const radius = 4;
-        const offsetX = Math.cos(angle) * radius;
-        const offsetY = Math.sin(angle) * radius;
-        pupil.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-    });
+        // Primeiro sol (página inicial)
+        movePupil(e, 'pupil1', 'leftEye');
+        movePupil(e, 'pupil2', 'rightEye');
+        
+        // Sol da página de causas
+        movePupil(e, 'pupil3', 'leftEye3');
+        movePupil(e, 'pupil4', 'rightEye3');
+        
+        // Sol da página de impactos
+        movePupil(e, 'pupil5', 'leftEye5');
+        movePupil(e, 'pupil6', 'rightEye5');
+        
+        // Sol da página de soluções
+        movePupil(e, 'pupil7', 'leftEye7');
+        movePupil(e, 'pupil8', 'rightEye7');
+        
+        // Sol da página de curiosidades
+        movePupil(e, 'pupil9', 'leftEye9');
+        movePupil(e, 'pupil10', 'rightEye9');
     });
 
-    function showCausaEfeito() {
-    document.getElementById('causaEfeito').style.display = 'block';
+    function movePupil(e, pupilId, eyeId) {
+        const pupil = document.getElementById(pupilId);
+        const eye = document.getElementById(eyeId);
+        
+        if (pupil && eye) {
+            const rect = eye.getBoundingClientRect();
+            const eyeCenterX = rect.left + rect.width / 2;
+            const eyeCenterY = rect.top + rect.height / 2;
+            const dx = e.clientX - eyeCenterX;
+            const dy = e.clientY - eyeCenterY;
+            const angle = Math.atan2(dy, dx);
+            const radius = 4;
+            const offsetX = Math.cos(angle) * radius;
+            const offsetY = Math.sin(angle) * radius;
+            pupil.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        }
     }
 
-    // Alterna exibição do bloco "Causas e Efeitos"
-    function showCausaEfeito() {
-const causaEfeito = document.getElementById('causaEfeito');
-if (causaEfeito.style.display === 'block') {
-causaEfeito.style.display = 'none';
-} else {
- causaEfeito.style.display = 'block';
-}
-}
+    // Navegação entre páginas
+    document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove a classe active de todos os links e seções
+            document.querySelectorAll('.menu-link').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Adiciona a classe active ao link clicado
+            this.classList.add('active');
+            
+            // Mostra a seção correspondente
+            const sectionId = this.getAttribute('data-section');
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Rolagem suave para o topo
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
 </script>
 </body>
 </html>
